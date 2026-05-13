@@ -15,7 +15,7 @@ module.exports.onLoad = function () {
     const { join } = global.nodemodule["path"];
 
   const path = join(__dirname, "cache", "joinGif");
-  if (existsSync(path)) mkdirSync(path, { recursive: true });	
+  if (!existsSync(path)) mkdirSync(path, { recursive: true });	
 
   const path2 = join(__dirname, "cache", "joinGif", "randomgif");
     if (!existsSync(path2)) mkdirSync(path2, { recursive: true });
