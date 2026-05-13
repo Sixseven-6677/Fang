@@ -1,14 +1,19 @@
 module.exports.config = {
-  name: "تيد",	version: "1.0.0", 
+  name: "تيد",
+  version: "1.0.1",
   hasPermssion: 0,
   credits: "NTKhang",
-  description: "معرف المجموعة 👽", 
+  description: "معرف المجموعة 👽",
   commandCategory: "group",
   usages: "tid",
-  cooldowns: 5, 
+  cooldowns: 5,
   dependencies: '',
 };
 
 module.exports.run = async function({ api, event }) {
-  api.sendMessage(event.threadID, event.threadID);
+  return api.sendMessage(
+    `🔍 معرف المجموعة:\n${event.threadID}`,
+    event.threadID,
+    event.messageID
+  );
 };
