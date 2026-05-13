@@ -35,7 +35,7 @@ module.exports.handleEvent = function ({ api, event, getText }) {
   const { threadID, messageID, body } = event;
 
   if (!body || typeof body == "undefined" || body.indexOf("اوامر") != 0) return;
-  const splitBody = body.slice(body.indexOf("أوامر")).trim().split(/\s+/);
+  const splitBody = body.slice(body.indexOf("اوامر")).trim().split(/\s+/);
   if (splitBody.length == 1 || !commands.has(splitBody[1].toLowerCase())) return;
   const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
   const command = commands.get(splitBody[1].toLowerCase());
